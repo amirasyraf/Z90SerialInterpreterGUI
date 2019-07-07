@@ -14,14 +14,18 @@ namespace SerialInterpreterGUI
         static string strHostCommand;
         private void Start_Listen()
         {
+            if (RunStatus.status)
+                return;
+
             Port = new SerialPort(ComPortList.Text, 19200, Parity.None, 8, StopBits.One);
             this.Dispatcher.Invoke(() =>
             {
                 Terminal_Text.Inlines.Add(new Run("Listening...\n") { Foreground = Brushes.Green });
             });
-            RunStatus.status = true;
             Port.DataReceived += new SerialDataReceivedEventHandler(Port_DataReceived);
             Port.Open();
+
+            RunStatus.status = true;
         }
         private void Stop_Listen()
         {

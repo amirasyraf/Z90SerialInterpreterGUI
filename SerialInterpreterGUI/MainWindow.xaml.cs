@@ -13,6 +13,7 @@ namespace SerialInterpreterGUI
         {
             InitializeComponent();
             ComPortList.ItemsSource = OrderedPortNames();
+            RunStatus.status = false;
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
