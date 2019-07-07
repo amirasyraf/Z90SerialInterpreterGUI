@@ -22,6 +22,7 @@ namespace SerialInterpreterGUI
         public MainWindow()
         {
             InitializeComponent();
+            RefreshComPortList();
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)
@@ -35,6 +36,11 @@ namespace SerialInterpreterGUI
         private void Stop_Button_Click(object sender, RoutedEventArgs e)
         {
             RunStatus.status = false;
+        }
+
+        private void Refresh_Button_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshComPortList();
         }
     }
     public static class RunStatus
