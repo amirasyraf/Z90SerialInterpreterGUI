@@ -24,7 +24,7 @@
                 <TextBlock Text="LISTEN" VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <ComboBox Name="ComPortList" HorizontalAlignment="Left" Margin="289,62,0,0" VerticalAlignment="Top" Width="122"/>
+        <ComboBox Name="ComPortList" HorizontalAlignment="Left" Margin="289,62,0,0" VerticalAlignment="Top" Width="122" SelectedIndex="0"/>
         <Label Content="COM Port List" HorizontalAlignment="Left" Margin="299,30,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Button Content="Refresh" HorizontalAlignment="Left" Margin="423,62,0,0" VerticalAlignment="Top" Width="75" Click="Refresh_Button_Click"/>
     </Grid>
