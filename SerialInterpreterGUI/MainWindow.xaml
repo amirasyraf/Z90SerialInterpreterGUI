@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerialInterpreterGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Z90 Interpreter" Height="461.139" Width="800"
+        ResizeMode="NoResize">
     <Grid>
-        <Button Height="50" Margin="402,116,270,257" FontSize="20" Click="Stop_Button_Click">
+        <Button Name="Stop_Button" Margin="402,114,270,248" FontSize="20" Click="Stop_Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Resources\stop.png" Width="30" Height="30"/>
                 <TextBlock Text=" STOP" VerticalAlignment="Center" />
             </StackPanel>
         </Button>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="219" Margin="10,194,0,0" VerticalAlignment="Top" Width="772">
+        <Border BorderBrush="Black" BorderThickness="1" Height="220" Margin="10,200,10,0" VerticalAlignment="Top">
             <ScrollViewer Name="Terminal_Text_Scroll">
-                <TextBlock Name="Terminal_Text" TextWrapping="Wrap" Text="Interpreter Initialized&#x0a;" FontSize="14"/>
+                <TextBlock Name="Terminal_Text" TextWrapping="Wrap" Text="Interpreter Initialized&#x0a;" FontSize="14" Width="747"/>
             </ScrollViewer>
         </Border>
-        <Button Height="50" Margin="268,116,404,257" FontSize="20" Click="Start_Button_Click">
+        <Button Name="Start_Button" Margin="268,114,404,248" FontSize="20" Click="Start_Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Resources\start.png" Width="32" Height="32"/>
                 <TextBlock Text="LISTEN" VerticalAlignment="Center" />

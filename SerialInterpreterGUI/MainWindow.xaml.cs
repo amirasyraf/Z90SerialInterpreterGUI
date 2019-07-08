@@ -14,6 +14,7 @@ namespace SerialInterpreterGUI
             InitializeComponent();
             ComPortList.ItemsSource = OrderedPortNames();
             RunStatus.status = false;
+            Stop_Button.IsEnabled = false;
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)

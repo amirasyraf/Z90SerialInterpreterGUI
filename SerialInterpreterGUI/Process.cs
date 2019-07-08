@@ -20,7 +20,9 @@ namespace SerialInterpreterGUI
             Port = new SerialPort(ComPortList.Text, 19200, Parity.None, 8, StopBits.One);
             this.Dispatcher.Invoke(() =>
             {
-                Terminal_Text.Inlines.Add(new Run("Listening...\n") { Foreground = Brushes.Green });
+                Terminal_Text.Inlines.Add(new Run("Listening at port: " + ComPortList.Text + "\n") { Foreground = Brushes.Green });
+                Start_Button.IsEnabled = false;
+                Stop_Button.IsEnabled = true;
             });
             Port.DataReceived += new SerialDataReceivedEventHandler(Port_DataReceived);
             Port.Open();
@@ -34,6 +36,8 @@ namespace SerialInterpreterGUI
             this.Dispatcher.Invoke(() =>
             {
                 Terminal_Text.Inlines.Add(new Run("Stopped!\n") { Foreground = Brushes.Red });
+                Start_Button.IsEnabled = true;
+                Stop_Button.IsEnabled = false;
             });
         }
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
